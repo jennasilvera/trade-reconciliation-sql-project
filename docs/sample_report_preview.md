@@ -96,16 +96,16 @@ Converts reconciliation breaks into an operational queue with severity, owner qu
 
 | exception_id | source_report | execution_id | exception_type | severity | owner_queue | sla_hours | status | age_days | generated_at_utc | resolution_notes |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
-| EXC-00001 | nan | EXEC-000060 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00002 | nan | EXEC-000061 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00003 | nan | EXEC-000062 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00004 | nan | EXEC-000005 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00005 | nan | EXEC-000010 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00006 | nan | EXEC-000015 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00007 | nan | EXEC-BONLY-000001 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00008 | nan | EXEC-BONLY-000002 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00009 | nan | EXEC-BONLY-000003 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
-| EXC-00010 | nan | EXEC-000030 | PRICE_MISMATCH | MEDIUM | Trade Support | 24 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00001 | nan | EXEC-000060 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00002 | nan | EXEC-000061 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00003 | nan | EXEC-000062 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00004 | nan | EXEC-000005 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00005 | nan | EXEC-000010 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00006 | nan | EXEC-000015 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00007 | nan | EXEC-BONLY-000001 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00008 | nan | EXEC-BONLY-000002 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00009 | nan | EXEC-BONLY-000003 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
+| EXC-00010 | nan | EXEC-000030 | PRICE_MISMATCH | MEDIUM | Trade Support | 24 | OPEN | 0 | 2026-01-15 17:00:00 | nan |
 
 
 ## Data Quality Checks

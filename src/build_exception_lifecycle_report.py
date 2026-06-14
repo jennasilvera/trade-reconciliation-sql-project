@@ -1,4 +1,3 @@
-from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
@@ -74,7 +73,7 @@ def normalize_report(report_name: str, path: Path) -> pd.DataFrame:
 
     output["status"] = "OPEN"
     output["age_days"] = 0
-    output["generated_at_utc"] = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M:%S")
+    output["generated_at_utc"] = "2026-01-15 17:00:00"
     output["resolution_notes"] = ""
 
     return output
