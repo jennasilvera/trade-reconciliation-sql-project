@@ -96,6 +96,16 @@ def main() -> None:
             "Data Quality Checks",
             "Shows validation checks for raw input files before reconciliation.",
         ),
+        section_for_report(
+            "input_manifest.csv",
+            "Raw Input Manifest",
+            "Inventories expected source CSV files, including row counts, column counts, status, and descriptions.",
+        ),
+        section_for_report(
+            "report_manifest.csv",
+            "Report Manifest",
+            "Inventories generated output reports, including row counts, column counts, status, and descriptions.",
+        ),
         "---",
         "",
         "## How to Regenerate These Reports",

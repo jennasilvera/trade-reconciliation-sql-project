@@ -130,6 +130,41 @@ Shows validation checks for raw input files before reconciliation.
 | broker_trades | file_exists | PASS | Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/broker_trades.csv |
 
 
+## Raw Input Manifest
+
+**File:** `data/reports/input_manifest.csv`
+
+Inventories expected source CSV files, including row counts, column counts, status, and descriptions.
+
+**Rows:** 5
+
+| input_name | input_path | status | row_count | column_count | description | columns |
+| --- | --- | --- | --- | --- | --- | --- |
+| internal_trades.csv | data/raw/internal_trades.csv | FOUND | 501 | 19 | Simulated internal trade bookings | internal_trade_id, order_id, execution_id, trade_date, settle_date, symbol, side, quantity, price, gross_amount, commission, fees, currency, strategy, portfolio, account_id, broker, source_system, created_at |
+| broker_trades.csv | data/raw/broker_trades.csv | FOUND | 501 | 17 | Simulated broker-reported trades | broker_trade_id, execution_id, trade_date, settle_date, symbol, side, quantity, price, gross_amount, commission, fees, currency, account_id, broker, source_system, broker_execution_id, received_at |
+| internal_allocations.csv | data/raw/internal_allocations.csv | FOUND | 546 | 6 | Simulated internal account-level allocations | allocation_id, execution_id, account_id, allocation_quantity, allocation_pct, created_at |
+| broker_allocations.csv | data/raw/broker_allocations.csv | FOUND | 546 | 6 | Simulated broker account-level allocations | allocation_id, execution_id, account_id, allocation_quantity, allocation_pct, received_at |
+| expected_breaks.csv | data/raw/expected_breaks.csv | FOUND | 25 | 2 | Reference file describing intentionally injected breaks | execution_id, expected_break_type |
+
+
+## Report Manifest
+
+**File:** `data/reports/report_manifest.csv`
+
+Inventories generated output reports, including row counts, column counts, status, and descriptions.
+
+**Rows:** 6
+
+| report_name | report_path | status | row_count | column_count | description | columns |
+| --- | --- | --- | --- | --- | --- | --- |
+| trade_exceptions.csv | data/reports/trade_exceptions.csv | FOUND | 21 | 18 | Trade-level reconciliation breaks between internal and broker records | execution_id, exception_type, severity, exception_description, internal_trade_id, broker_trade_id, internal_quantity, broker_quantity, internal_price, broker_price, internal_side, broker_side, internal_symbol, broker_symbol, internal_settle_date, broker_settle_date, internal_total_fees, broker_total_fees |
+| duplicate_trade_exceptions.csv | data/reports/duplicate_trade_exceptions.csv | FOUND | 2 | 5 | Duplicate execution ID checks across trade sources | execution_id, exception_type, severity, duplicate_count, duplicate_record_ids |
+| allocation_exceptions.csv | data/reports/allocation_exceptions.csv | FOUND | 10 | 7 | Account-level allocation reconciliation breaks | execution_id, exception_type, severity, internal_account_id, broker_account_id, internal_allocation_quantity, broker_allocation_quantity |
+| reconciliation_summary.csv | data/reports/reconciliation_summary.csv | FOUND | 12 | 2 | Summary of exception counts by break type | exception_type, exception_count |
+| data_quality_checks.csv | data/reports/data_quality_checks.csv | FOUND | 30 | 4 | Validation checks for raw input files | dataset, check_name, status, details |
+| exception_lifecycle_report.csv | data/reports/exception_lifecycle_report.csv | FOUND | 33 | 11 | Operational exception queue with severity, owner queue, SLA, and status | exception_id, source_report, execution_id, exception_type, severity, owner_queue, sla_hours, status, age_days, generated_at_utc, resolution_notes |
+
+
 ---
 
 ## How to Regenerate These Reports
