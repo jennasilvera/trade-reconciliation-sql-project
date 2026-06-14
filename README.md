@@ -105,6 +105,12 @@ trade-reconciliation-sql-project/
 
 ---
 
+---
+
+## Changelog
+
+See [CHANGELOG.md](CHANGELOG.md) for release notes and project history.
+
 ## License
 
 This project is released under the MIT License.
