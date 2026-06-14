@@ -38,6 +38,7 @@ check:
 	make run
 	make quality
 	make lifecycle
+	make manifest
 	make preview
 	pytest
 
@@ -46,4 +47,7 @@ quality:
 
 lifecycle:
 	python src/build_exception_lifecycle_report.py
+
+manifest:
+	python src/build_report_manifest.py
 
