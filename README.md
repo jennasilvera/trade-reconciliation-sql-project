@@ -10,6 +10,17 @@ This project uses **Python, SQL, SQLite, pandas, and CSV reports** to simulate h
 
 ---
 
+## Project Highlights
+
+- Simulates internal trade bookings, broker trade records, and account-level allocation files
+- Detects trade-level, duplicate, allocation, settlement, fee, and lifecycle exceptions
+- Uses SQL views and queries to reconcile internal records against broker records
+- Generates CSV exception reports, data quality reports, manifests, and lifecycle/SLA reports
+- Includes pytest validation and GitHub Actions CI
+- Documents the workflow with runbooks, architecture diagrams, ERD, controls matrix, and assumptions
+
+---
+
 ## Project Objective
 
 The goal of this project is to demonstrate the ability to:
