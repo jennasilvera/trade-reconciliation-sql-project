@@ -25,7 +25,7 @@ To run these manually:
         i.side,
         i.quantity,
         i.price,
-        i.settlement_date
+        i.settle_date
     FROM internal_trades i
     LEFT JOIN broker_trades b
         ON i.execution_id = b.execution_id
@@ -42,7 +42,7 @@ To run these manually:
         b.side,
         b.quantity,
         b.price,
-        b.settlement_date
+        b.settle_date
     FROM broker_trades b
     LEFT JOIN internal_trades i
         ON b.execution_id = i.execution_id
@@ -119,13 +119,13 @@ To run these manually:
     SELECT
         i.execution_id,
         i.symbol,
-        i.fee AS internal_fee,
-        b.fee AS broker_fee,
-        ROUND(i.fee - b.fee, 2) AS fee_difference
+        i.fees AS internal_fees,
+        b.fees AS broker_fees,
+        ROUND(i.fees - b.fees, 2) AS fee_difference
     FROM internal_trades i
     JOIN broker_trades b
         ON i.execution_id = b.execution_id
-    WHERE ROUND(i.fee, 2) <> ROUND(b.fee, 2);
+    WHERE ROUND(i.fees, 2) <> ROUND(b.fees, 2);
 
 ---
 
@@ -135,12 +135,12 @@ To run these manually:
         i.execution_id,
         i.trade_date,
         i.symbol,
-        i.settlement_date AS internal_settlement_date,
-        b.settlement_date AS broker_settlement_date
+        i.settle_date AS internal_settle_date,
+        b.settle_date AS broker_settle_date
     FROM internal_trades i
     JOIN broker_trades b
         ON i.execution_id = b.execution_id
-    WHERE i.settlement_date <> b.settlement_date;
+    WHERE i.settle_date <> b.settle_date;
 
 ---
 
@@ -170,15 +170,15 @@ To run these manually:
 
     SELECT
         i.execution_id,
-        i.account AS internal_account,
-        b.account AS broker_account,
-        i.allocated_quantity AS internal_allocated_quantity,
-        b.allocated_quantity AS broker_allocated_quantity
+        i.account_id AS internal_account,
+        b.account_id AS broker_account,
+        i.allocation_quantity AS internal_allocated_quantity,
+        b.allocation_quantity AS broker_allocated_quantity
     FROM internal_allocations i
     LEFT JOIN broker_allocations b
         ON i.execution_id = b.execution_id
-       AND i.account = b.account
-    WHERE b.account IS NULL;
+       AND i.account_id = b.account_id
+    WHERE b.account_id IS NULL;
 
 ---
 
