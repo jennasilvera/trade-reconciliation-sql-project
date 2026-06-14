@@ -86,6 +86,16 @@ def main() -> None:
             "Allocation Exceptions",
             "Shows account-level allocation breaks between internal and broker allocation records.",
         ),
+        section_for_report(
+            "exception_lifecycle_report.csv",
+            "Exception Lifecycle Report",
+            "Converts reconciliation breaks into an operational queue with severity, owner queue, SLA hours, status, and timestamps.",
+        ),
+        section_for_report(
+            "data_quality_checks.csv",
+            "Data Quality Checks",
+            "Shows validation checks for raw input files before reconciliation.",
+        ),
         "---",
         "",
         "## How to Regenerate These Reports",

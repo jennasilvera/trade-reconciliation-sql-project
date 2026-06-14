@@ -86,6 +86,50 @@ Shows account-level allocation breaks between internal and broker allocation rec
 | EXEC-BONLY-000003 | ALLOCATION_ACCOUNT_MISSING_INTERNALLY | MEDIUM | nan | PA_LONG_SHORT | nan | 500.0 |
 
 
+## Exception Lifecycle Report
+
+**File:** `data/reports/exception_lifecycle_report.csv`
+
+Converts reconciliation breaks into an operational queue with severity, owner queue, SLA hours, status, and timestamps.
+
+**Rows:** 33
+
+| exception_id | source_report | execution_id | exception_type | severity | owner_queue | sla_hours | status | age_days | generated_at_utc | resolution_notes |
+| --- | --- | --- | --- | --- | --- | --- | --- | --- | --- | --- |
+| EXC-00001 | nan | EXEC-000060 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00002 | nan | EXEC-000061 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00003 | nan | EXEC-000062 | FEE_MISMATCH | LOW | Fees / Commissions | 48 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00004 | nan | EXEC-000005 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00005 | nan | EXEC-000010 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00006 | nan | EXEC-000015 | MISSING_BROKER_TRADE | HIGH | Broker Operations | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00007 | nan | EXEC-BONLY-000001 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00008 | nan | EXEC-BONLY-000002 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00009 | nan | EXEC-BONLY-000003 | MISSING_INTERNAL_BOOKING | HIGH | Trade Support | 4 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+| EXC-00010 | nan | EXEC-000030 | PRICE_MISMATCH | MEDIUM | Trade Support | 24 | OPEN | 0 | 2026-06-14 04:20:27 | nan |
+
+
+## Data Quality Checks
+
+**File:** `data/reports/data_quality_checks.csv`
+
+Shows validation checks for raw input files before reconciliation.
+
+**Rows:** 30
+
+| dataset | check_name | status | details |
+| --- | --- | --- | --- |
+| internal_trades | file_exists | PASS | Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/internal_trades.csv |
+| internal_trades | row_count_positive | PASS | Row count: 501 |
+| internal_trades | required_columns_present | PASS | All required columns present |
+| internal_trades | execution_id_not_null | PASS | Null execution_id count: 0 |
+| internal_trades | quantity_positive | PASS | Non-positive quantity count: 0 |
+| internal_trades | price_positive | PASS | Non-positive price count: 0 |
+| internal_trades | commission_non_negative | PASS | Negative commission count: 0 |
+| internal_trades | fees_non_negative | PASS | Negative fees count: 0 |
+| internal_trades | side_values_valid | PASS | Invalid side count: 0 |
+| broker_trades | file_exists | PASS | Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/broker_trades.csv |
+
+
 ---
 
 ## How to Regenerate These Reports
