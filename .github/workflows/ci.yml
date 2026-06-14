@@ -26,14 +26,6 @@ jobs:
           python -m pip install --upgrade pip
           python -m pip install -r requirements.txt
 
-      - name: Run reconciliation workflow
+      - name: Run full validation workflow
         run: |
-          make run
-
-      - name: Generate sample report preview
-        run: |
-          make preview
-
-      - name: Run tests
-        run: |
-          pytest
+          make check
