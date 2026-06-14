@@ -1,0 +1,23 @@
+dataset,check_name,status,details
+internal_trades,file_exists,PASS,Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/internal_trades.csv
+internal_trades,row_count_positive,PASS,Row count: 501
+internal_trades,required_columns_present,FAIL,"Missing columns: trade_id, settlement_date, fee"
+internal_trades,execution_id_not_null,PASS,Null execution_id count: 0
+internal_trades,quantity_positive,PASS,Non-positive quantity count: 0
+internal_trades,price_positive,PASS,Non-positive price count: 0
+internal_trades,side_values_valid,PASS,Invalid side count: 0
+broker_trades,file_exists,PASS,Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/broker_trades.csv
+broker_trades,row_count_positive,PASS,Row count: 501
+broker_trades,required_columns_present,FAIL,"Missing columns: settlement_date, fee"
+broker_trades,execution_id_not_null,PASS,Null execution_id count: 0
+broker_trades,quantity_positive,PASS,Non-positive quantity count: 0
+broker_trades,price_positive,PASS,Non-positive price count: 0
+broker_trades,side_values_valid,PASS,Invalid side count: 0
+internal_allocations,file_exists,PASS,Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/internal_allocations.csv
+internal_allocations,row_count_positive,PASS,Row count: 546
+internal_allocations,required_columns_present,FAIL,"Missing columns: account, allocated_quantity, allocation_percent"
+internal_allocations,execution_id_not_null,PASS,Null execution_id count: 0
+broker_allocations,file_exists,PASS,Found file: /home/jennasilv/trade-reconciliation-sql-project/data/raw/broker_allocations.csv
+broker_allocations,row_count_positive,PASS,Row count: 546
+broker_allocations,required_columns_present,FAIL,"Missing columns: broker_allocation_id, account, allocated_quantity, allocation_percent"
+broker_allocations,execution_id_not_null,PASS,Null execution_id count: 0

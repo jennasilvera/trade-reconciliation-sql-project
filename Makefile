@@ -24,5 +24,10 @@ preview:
 
 check:
 	make run
+	make quality
 	make preview
 	pytest
+
+quality:
+	python src/run_data_quality_checks.py
+
