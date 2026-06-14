@@ -86,22 +86,53 @@ trade-reconciliation-sql-project/
 ├── README.md
 ├── Makefile
 ├── requirements.txt
+├── LICENSE
+├── CHANGELOG.md
+├── ROADMAP.md
+├── .github/workflows/ci.yml
 ├── data/
 │   ├── raw/
 │   └── reports/
 ├── docs/
-│   └── project_walkthrough.md
+│   ├── README.md
+│   ├── project_walkthrough.md
+│   ├── architecture.md
+│   ├── schema_erd.md
+│   ├── data_dictionary.md
+│   ├── sample_report_preview.md
+│   ├── sql_investigation_examples.md
+│   ├── break_investigation_runbook.md
+│   ├── daily_reconciliation_runbook.md
+│   ├── reconciliation_controls_matrix.md
+│   ├── exception_lifecycle_sla_guide.md
+│   ├── reconciliation_tolerance_policy.md
+│   ├── postgresql_migration.md
+│   ├── assumptions_and_limitations.md
+│   └── project_quality_checklist.md
 ├── sql/
 │   ├── 01_create_tables.sql
 │   ├── 02_reconciliation_views.sql
-│   └── 03_exception_queries.sql
+│   ├── 03_exception_queries.sql
+│   └── 04_investigation_queries.sql
 ├── src/
-│   ├── config.py
 │   ├── generate_data.py
 │   ├── load_database.py
-│   └── run_reconciliation.py
+│   ├── run_reconciliation.py
+│   ├── run_data_quality_checks.py
+│   ├── build_exception_lifecycle_report.py
+│   ├── build_input_manifest.py
+│   ├── build_report_manifest.py
+│   └── export_report_preview.py
 └── tests/
-    └── test_reconciliation_outputs.py
+    ├── test_reconciliation_outputs.py
+    ├── test_expected_break_types.py
+    ├── test_data_quality_checks.py
+    ├── test_exception_lifecycle_report.py
+    ├── test_input_manifest.py
+    ├── test_report_manifest.py
+    ├── test_sql_investigation_queries.py
+    └── test_documentation_links.py
+```
 
 ---
 
