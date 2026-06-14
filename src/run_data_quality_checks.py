@@ -16,40 +16,60 @@ INPUT_FILES = {
 
 REQUIRED_COLUMNS = {
     "internal_trades": [
-        "trade_id",
+        "internal_trade_id",
+        "order_id",
         "execution_id",
         "trade_date",
-        "settlement_date",
+        "settle_date",
         "symbol",
         "side",
         "quantity",
         "price",
-        "fee",
+        "gross_amount",
+        "commission",
+        "fees",
+        "currency",
+        "strategy",
+        "portfolio",
+        "account_id",
+        "broker",
+        "source_system",
+        "created_at",
     ],
     "broker_trades": [
         "broker_trade_id",
+        "broker_execution_id",
         "execution_id",
         "trade_date",
-        "settlement_date",
+        "settle_date",
         "symbol",
         "side",
         "quantity",
         "price",
-        "fee",
+        "gross_amount",
+        "commission",
+        "fees",
+        "currency",
+        "account_id",
+        "broker",
+        "source_system",
+        "received_at",
     ],
     "internal_allocations": [
         "allocation_id",
         "execution_id",
-        "account",
-        "allocated_quantity",
-        "allocation_percent",
+        "account_id",
+        "allocation_quantity",
+        "allocation_pct",
+        "created_at",
     ],
     "broker_allocations": [
-        "broker_allocation_id",
+        "allocation_id",
         "execution_id",
-        "account",
-        "allocated_quantity",
-        "allocation_percent",
+        "account_id",
+        "allocation_quantity",
+        "allocation_pct",
+        "received_at",
     ],
 }
 
@@ -95,9 +115,9 @@ def run_checks():
             dataset,
             "required_columns_present",
             "PASS" if not missing_columns else "FAIL",
-            "Missing columns: " + ", ".join(missing_columns)
-            if missing_columns
-            else "All required columns present",
+            "All required columns present"
+            if not missing_columns
+            else "Missing columns: " + ", ".join(missing_columns),
         )
 
         if "execution_id" in df.columns:
@@ -120,14 +140,26 @@ def run_checks():
                 f"Non-positive quantity count: {non_positive_quantity}",
             )
 
-        if "allocated_quantity" in df.columns:
-            non_positive_alloc_qty = (df["allocated_quantity"] <= 0).sum()
+        if "allocation_quantity" in df.columns:
+            non_positive_allocation_quantity = (df["allocation_quantity"] <= 0).sum()
             add_check(
                 results,
                 dataset,
-                "allocated_quantity_positive",
-                "PASS" if non_positive_alloc_qty == 0 else "FAIL",
-                f"Non-positive allocated quantity count: {non_positive_alloc_qty}",
+                "allocation_quantity_positive",
+                "PASS" if non_positive_allocation_quantity == 0 else "FAIL",
+                f"Non-positive allocation quantity count: {non_positive_allocation_quantity}",
+            )
+
+        if "allocation_pct" in df.columns:
+            invalid_allocation_pct = (
+                (df["allocation_pct"] <= 0) | (df["allocation_pct"] > 1)
+            ).sum()
+            add_check(
+                results,
+                dataset,
+                "allocation_pct_valid",
+                "PASS" if invalid_allocation_pct == 0 else "FAIL",
+                f"Invalid allocation_pct count: {invalid_allocation_pct}",
             )
 
         if "price" in df.columns:
@@ -138,6 +170,26 @@ def run_checks():
                 "price_positive",
                 "PASS" if non_positive_price == 0 else "FAIL",
                 f"Non-positive price count: {non_positive_price}",
+            )
+
+        if "commission" in df.columns:
+            negative_commission = (df["commission"] < 0).sum()
+            add_check(
+                results,
+                dataset,
+                "commission_non_negative",
+                "PASS" if negative_commission == 0 else "FAIL",
+                f"Negative commission count: {negative_commission}",
+            )
+
+        if "fees" in df.columns:
+            negative_fees = (df["fees"] < 0).sum()
+            add_check(
+                results,
+                dataset,
+                "fees_non_negative",
+                "PASS" if negative_fees == 0 else "FAIL",
+                f"Negative fees count: {negative_fees}",
             )
 
         if "side" in df.columns:
