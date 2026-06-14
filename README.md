@@ -107,6 +107,12 @@ trade-reconciliation-sql-project/
 
 ---
 
+---
+
+## Roadmap
+
+See [ROADMAP.md](ROADMAP.md) for future enhancement ideas.
+
 ## Changelog
 
 See [CHANGELOG.md](CHANGELOG.md) for release notes and project history.
