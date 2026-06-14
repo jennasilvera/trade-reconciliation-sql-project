@@ -18,3 +18,7 @@ clean:
 	rm -f trade_recon.db
 	rm -f data/raw/*.csv
 	rm -f data/reports/*.csv
+
+preview:
+	python src/export_report_preview.py
+
