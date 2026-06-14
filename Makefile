@@ -22,3 +22,7 @@ clean:
 preview:
 	python src/export_report_preview.py
 
+check:
+	make run
+	make preview
+	pytest
