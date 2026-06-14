@@ -211,25 +211,6 @@ This project demonstrates those workflows using simulated data and transparent l
 
 ---
 
-## Interview Explanation
-
-A concise interview explanation:
-
-> I built a simulated trade reconciliation project to practice the type of SQL-based operational control work used in trading operations. The project generates internal trade bookings, broker trade records, and account allocation files. I intentionally inject realistic breaks like missing trades, quantity mismatches, price mismatches, fee breaks, settlement breaks, allocation mismatches, and duplicates. Then I load the data into SQLite and run SQL exception queries to produce CSV reports. The goal was to show that I can reason through trade lifecycle data, join records across sources, isolate breaks, and create repeatable reconciliation controls using SQL and Python.
-
----
-
-## Resume Bullets
-
-Use only after completing the project:
-
-- Built a simulated trade reconciliation workflow using Python, SQL, SQLite, and pandas to compare internal trade bookings against broker execution records and generate exception reports.
-- Designed SQL controls to identify missing trades, duplicate execution IDs, quantity mismatches, price breaks, side discrepancies, symbol discrepancies, fee breaks, settlement date mismatches, and allocation mismatches.
-- Created repeatable reconciliation scripts that generate synthetic trade lifecycle data, load CSV files into a relational database, run SQL exception logic, and export operations-ready CSV reports.
-- Modeled account-level allocation reconciliation across internal and broker sources to detect allocation account and quantity discrepancies.
-- Documented the project in a recruiter-ready GitHub README explaining the business scenario, reconciliation logic, control framework, and interview relevance.
-
----
 
 ## Future Enhancements
 
