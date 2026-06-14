@@ -4,6 +4,7 @@ help:
 	@echo "Available commands:"
 	@echo "  make run      Generate data, load database, and run reconciliation"
 	@echo "  make quality  Run data quality checks"
+	@echo "  make lifecycle Build exception lifecycle/SLA report"
 	@echo "  make preview  Generate Markdown preview of output reports"
 	@echo "  make test     Run pytest suite"
 	@echo "  make check    Run full workflow, preview, quality checks, and tests"
@@ -36,9 +37,13 @@ preview:
 check:
 	make run
 	make quality
+	make lifecycle
 	make preview
 	pytest
 
 quality:
 	python src/run_data_quality_checks.py
+
+lifecycle:
+	python src/build_exception_lifecycle_report.py
 
