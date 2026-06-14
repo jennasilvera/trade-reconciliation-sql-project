@@ -36,6 +36,7 @@ preview:
 
 check:
 	make run
+	make input_manifest
 	make quality
 	make lifecycle
 	make manifest
@@ -50,4 +51,7 @@ lifecycle:
 
 manifest:
 	python src/build_report_manifest.py
+
+input_manifest:
+	python src/build_input_manifest.py
 

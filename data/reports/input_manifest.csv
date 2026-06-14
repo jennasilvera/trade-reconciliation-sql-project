@@ -1,0 +1,6 @@
+input_name,input_path,status,row_count,column_count,description,columns
+internal_trades.csv,data/raw/internal_trades.csv,FOUND,501,19,Simulated internal trade bookings,"internal_trade_id, order_id, execution_id, trade_date, settle_date, symbol, side, quantity, price, gross_amount, commission, fees, currency, strategy, portfolio, account_id, broker, source_system, created_at"
+broker_trades.csv,data/raw/broker_trades.csv,FOUND,501,17,Simulated broker-reported trades,"broker_trade_id, execution_id, trade_date, settle_date, symbol, side, quantity, price, gross_amount, commission, fees, currency, account_id, broker, source_system, broker_execution_id, received_at"
+internal_allocations.csv,data/raw/internal_allocations.csv,FOUND,546,6,Simulated internal account-level allocations,"allocation_id, execution_id, account_id, allocation_quantity, allocation_pct, created_at"
+broker_allocations.csv,data/raw/broker_allocations.csv,FOUND,546,6,Simulated broker account-level allocations,"allocation_id, execution_id, account_id, allocation_quantity, allocation_pct, received_at"
+expected_breaks.csv,data/raw/expected_breaks.csv,FOUND,25,2,Reference file describing intentionally injected breaks,"execution_id, expected_break_type"
