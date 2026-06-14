@@ -21,6 +21,21 @@ This project uses **Python, SQL, SQLite, pandas, and CSV reports** to simulate h
 
 ---
 
+## Quick Start
+
+Run the full project workflow locally:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install -r requirements.txt
+make check
+```
+
+The `make check` command regenerates simulated data, loads the SQLite database, runs reconciliation logic, builds reports, validates data quality, generates manifests, updates documentation previews, and runs the test suite.
+
+---
+
 ## Project Objective
 
 The goal of this project is to demonstrate the ability to:
