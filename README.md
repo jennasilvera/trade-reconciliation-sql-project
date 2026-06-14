@@ -1,5 +1,7 @@
 # Trade Reconciliation SQL Project
 
+[![Trade Reconciliation CI](https://github.com/jennasilvera/trade-reconciliation-sql-project/actions/workflows/ci.yml/badge.svg)](https://github.com/jennasilvera/trade-reconciliation-sql-project/actions/workflows/ci.yml)
+
 A simulated SQL-based trade reconciliation workflow designed to demonstrate trading operations, production support, and data investigation skills for systematic trading, hedge fund, and capital markets operations roles.
 
 This project uses **Python, SQL, SQLite, pandas, and CSV reports** to simulate how a trading operations analyst might reconcile internal trade bookings against broker-reported trades and allocation records.
