@@ -102,3 +102,12 @@ trade-reconciliation-sql-project/
 │   └── run_reconciliation.py
 └── tests/
     └── test_reconciliation_outputs.py
+
+---
+
+## License
+
+This project is released under the MIT License.
+
+See [LICENSE](LICENSE) for details.
+
