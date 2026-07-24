@@ -101,7 +101,7 @@ Or run the full workflow:
 
 ---
 
-## Interview Explanation
+## Explanation
 
 A concise way to explain this feature:
 
