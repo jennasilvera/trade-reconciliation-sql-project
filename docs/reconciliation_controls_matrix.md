@@ -63,7 +63,7 @@ A trading operations analyst does not only need to find mismatches. They also ne
 
 ---
 
-## Interview Explanation
+## Explanation
 
 A concise way to explain this document:
 
