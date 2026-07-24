@@ -113,11 +113,11 @@ All data and workflows are simulated.
 
 ---
 
-## Final Portfolio Positioning
+## Project Positioning
 
-This project is ready to be presented as a simulated SQL and Python portfolio project for trading operations, hedge fund operations, production support, and data operations roles.
+This project is a simulated SQL and Python portfolio project for trading operations, hedge fund operations, production support, and data operations roles.
 
-The project should be described as:
+This project is best described as:
 
 - Simulated
 - SQL-driven
