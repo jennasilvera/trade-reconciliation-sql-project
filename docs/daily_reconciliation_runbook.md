@@ -141,7 +141,7 @@ A reconciliation run is complete when:
 
 ---
 
-## Interview Explanation
+## Explanation
 
 A concise way to explain this document:
 
